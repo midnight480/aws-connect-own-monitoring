@@ -32,5 +32,4 @@ exports.handler = async (event) => {
     });
     return call;
     */
-   return result;
 };
