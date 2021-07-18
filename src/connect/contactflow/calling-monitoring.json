@@ -1,0 +1,65 @@
+{
+    "modules": [
+        {
+            "id": "094af2b7-b14f-42ca-8694-69457fc85f3a",
+            "type": "InvokeExternalResource",
+            "branches": [
+                {
+                    "condition": "Success",
+                    "transition": "e04d5f85-e91f-4391-8829-e246215df380"
+                },
+                {
+                    "condition": "Error",
+                    "transition": "e04d5f85-e91f-4391-8829-e246215df380"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "FunctionArn",
+                    "value": "arn:aws:lambda:${AWS-Region}:${AWS-Account}:function:connect-hang-up-js",
+                    "namespace": null
+                },
+                {
+                    "name": "TimeLimit",
+                    "value": "8"
+                }
+            ],
+            "metadata": {
+                "position": {
+                    "x": 166,
+                    "y": 35
+                },
+                "dynamicMetadata": {},
+                "useDynamic": false
+            },
+            "target": "Lambda"
+        },
+        {
+            "id": "e04d5f85-e91f-4391-8829-e246215df380",
+            "type": "Disconnect",
+            "branches": [],
+            "parameters": [],
+            "metadata": {
+                "position": {
+                    "x": 420,
+                    "y": 149
+                }
+            }
+        }
+    ],
+    "version": "1",
+    "type": "contactFlow",
+    "start": "094af2b7-b14f-42ca-8694-69457fc85f3a",
+    "metadata": {
+        "entryPointPosition": {
+            "x": 19,
+            "y": 20
+        },
+        "snapToGrid": false,
+        "name": "calling-monitoring",
+        "description": null,
+        "type": "contactFlow",
+        "status": "published",
+        "hash": "25d802c3062c115b5aeffd911eba2d1486f4d1443781fb1a15d04efa8e232ddc"
+    }
+}
